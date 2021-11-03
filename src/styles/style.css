@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
+
+:root {
+	--bg-color: white;
+	--typeSpeed: 6s;
+	--typedChars: 23;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Source Code Pro', monospace;
+}
+body {
+	margin: 0;
+	min-height: 100vh;
+	background: var(--bg-color);
+	display: grid;
+	place-content: center;
+	align-items: center;
+}
+
+h1 {
+	font-size: 4.5rem;
+	position: relative;
+	width: max-content;
+}
+
+h1:after,
+h1:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+h1:before {
+	background: var(--bg-color);
+	animation:
+		typewriter var(--typeSpeed) steps(var(--typedChars)) 1s forwards;
+}
+
+h1:after {
+	width: .1em;
+	background: black;
+	animation:
+		typewriter var(--typeSpeed) steps(var(--typedChars)) 1s forwards,
+		blink 750ms steps(var(--typedChars)) 1.7;
+}
+
+@keyframes typewriter {
+	to {
+		left: 100%;
+	}
+}
+@keyframes blink {
+	to {
+		background: transparent;
+	}
+}
